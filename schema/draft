@@ -1,0 +1,106 @@
+mutation createFood{
+  createCategory(input:{
+    name:"food"
+  }){
+    id
+    name
+    
+  }
+}
+
+mutation createFlight{
+  createCategory(input:{
+    name:"ticket-flight"
+  }){
+    id
+    name
+    
+  }
+}
+
+mutation createPostFlight{
+  createPost(input:{
+    title:"Book flight to Miama"
+    f_name:"Le"
+    l_name:"Nguyen"
+    address:"1000 Rainbow Heaven city"
+    phone:"778-111-4321"
+    postCategoryId:"4ef2e4e9-23b4-4824-a97c-341e0d0c0081"
+  }){
+    id
+    title
+    f_name
+    l_name
+    address
+    phone
+  }
+}
+
+mutation createPostFood{
+  createPost(input:{
+    title:"Banh Beo"
+    f_name:"Le"
+    l_name:"Nguyen"
+    address:"1000 Rainbow Heaven city"
+    phone:"778-111-4321"
+    postCategoryId:"01c64fac-5260-41b3-ab57-641ea2c49c28"
+  }){
+    id
+    title
+    f_name
+    l_name
+    address
+    phone
+  }
+}
+
+
+query listCategorys{
+  listCategorys{
+    items{
+      id
+      name
+    }
+  }
+}
+
+query listPosts{
+  listPosts{
+    items{
+      id
+      f_name
+      l_name
+      title
+      Category{
+        id
+        name
+      }
+    }
+  }
+}
+query getPostFood{
+  getPost(id:"5bfcd638-a274-415f-b0ad-03f24026a168"){
+    id
+    title
+    f_name
+    l_name
+    address
+    phone
+  }
+}
+
+query getCategory{
+  getCategory(id:"4ef2e4e9-23b4-4824-a97c-341e0d0c0081"){
+    id
+    name
+    posts {
+      items{
+        id
+        f_name
+        l_name
+        title
+      }
+    }
+  }
+}
+

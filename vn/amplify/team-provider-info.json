@@ -10,6 +10,11 @@
             "StackName": "amplify-vn1996-local-233911",
             "StackId": "arn:aws:cloudformation:us-west-2:778574485467:stack/amplify-vn1996-local-233911/9ee1b2a0-9a64-11ea-8c36-069318d3f048",
             "AmplifyAppId": "dakl3x6dvo21u"
+        },
+        "categories": {
+            "auth": {
+                "vn1996374b14b6": {}
+            }
         }
     }
 }

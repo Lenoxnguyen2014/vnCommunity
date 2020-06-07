@@ -1,0 +1,15 @@
+type Category @model {
+  id: ID!
+  name: String!
+  posts: [Post] @connection(name: "Category")
+}
+type Post @model {
+  id: ID!
+  title: String!
+  f_name: String!
+  l_name: String!
+  address: String!
+  phone: String!
+  photo: String
+  Category: Category @connection(name: "Category")
+}
