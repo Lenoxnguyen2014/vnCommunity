@@ -10,6 +10,7 @@ const Menu = ({ open }) => {
   return (
       <>
     <StyledMenu open={open}>
+      <Nav.Link href="post">Create a post</Nav.Link>
       <Nav.Link href="thelist">The list</Nav.Link>
       <Nav.Link href="events">Events</Nav.Link>
       <Nav.Link href="groups">Groups</Nav.Link>

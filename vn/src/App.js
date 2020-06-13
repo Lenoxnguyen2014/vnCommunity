@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './global';
-import { Burger, Menu, List, Groups, Events, Help} from './components';
+import { Burger, Menu, List, Groups, Events, Help, Posts, Categorys} from './components';
 import { theme } from './theme';
 import { UseOnClickOutside } from './Hook';
 import {
@@ -11,13 +11,15 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import { withAuthenticator, AmplifySignOut,  } from '@aws-amplify/ui-react';
 
+// import { withAuthenticator, AmplifySignOut,  } from '@aws-amplify/ui-react';
 
 function App() {
   const [open, setOpen] = useState(false);
   const node = useRef(); 
-UseOnClickOutside(node, () => setOpen(false));
+  const [post, setPost]= useState([])
+  UseOnClickOutside(node, () => setOpen(false));
+
   return (
     <ThemeProvider theme={theme}>
 
@@ -40,6 +42,10 @@ UseOnClickOutside(node, () => setOpen(false));
           <Route path="/help">
             <Help />
           </Route>
+          <Route path="/post">
+            <Categorys />
+            <Posts />
+          </Route>
         </Switch>
       </Router>
 
@@ -51,4 +57,7 @@ UseOnClickOutside(node, () => setOpen(false));
   );
 }
 
-export default withAuthenticator(App);
+export default (App);
+
+
+// export default withAuthenticator(App);

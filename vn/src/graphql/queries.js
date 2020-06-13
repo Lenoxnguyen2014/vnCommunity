@@ -12,8 +12,7 @@ export const getCategory = /* GraphQL */ `
           title
           f_name
           l_name
-          address
-          phone
+          email
         }
         nextToken
       }
@@ -45,8 +44,7 @@ export const getPost = /* GraphQL */ `
       title
       f_name
       l_name
-      address
-      phone
+      email
       Category {
         id
         name
@@ -69,8 +67,7 @@ export const listPosts = /* GraphQL */ `
         title
         f_name
         l_name
-        address
-        phone
+        email
         Category {
           id
           name

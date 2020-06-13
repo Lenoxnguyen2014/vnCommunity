@@ -8,7 +8,6 @@ type Post @model {
   title: String!
   f_name: String!
   l_name: String!
-  address: String!
-  phone: String!
+  email: String!
   Category: Category @connection(name: "Category")
 }

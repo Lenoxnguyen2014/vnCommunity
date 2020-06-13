@@ -15,8 +15,7 @@ export const createCategory = /* GraphQL */ `
           title
           f_name
           l_name
-          address
-          phone
+          email
         }
         nextToken
       }
@@ -37,8 +36,7 @@ export const updateCategory = /* GraphQL */ `
           title
           f_name
           l_name
-          address
-          phone
+          email
         }
         nextToken
       }
@@ -59,8 +57,7 @@ export const deleteCategory = /* GraphQL */ `
           title
           f_name
           l_name
-          address
-          phone
+          email
         }
         nextToken
       }
@@ -77,8 +74,7 @@ export const createPost = /* GraphQL */ `
       title
       f_name
       l_name
-      address
-      phone
+      email
       Category {
         id
         name
@@ -99,8 +95,7 @@ export const updatePost = /* GraphQL */ `
       title
       f_name
       l_name
-      address
-      phone
+      email
       Category {
         id
         name
@@ -121,8 +116,7 @@ export const deletePost = /* GraphQL */ `
       title
       f_name
       l_name
-      address
-      phone
+      email
       Category {
         id
         name
