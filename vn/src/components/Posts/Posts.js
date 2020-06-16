@@ -3,8 +3,11 @@ import { PostStyle } from './Posts.styled';
 import {createPost} from '../../graphql/mutations'
 import { listPosts } from '../../graphql/queries'
 import { API, graphqlOperation } from "aws-amplify"
-
+// should 
 // steps:
+// update backend console: using filter and call it out here to run any front end we need
+// take out the updatePost because it is so annoying
+
 // create a category(return id)
 // create a addPost: (title, fname, lname, email, categoryid)
 // call graphQL function to work on create
@@ -35,7 +38,7 @@ function PostForm(props){
   const [email, setEmail] = useState('')
   //study abroad id
   // import category id pass here to add stuff
-  const [categoryid, setCategoryid] = useState('fc14bcb1-a8e2-4d27-b566-cb8948aa6813')
+  const [categoryid, setCategoryid] = useState("7f2e6ab6-b7db-4ed9-8013-1229a51260da")
   // handling change to submit the form
   const handleTitle = (e)=> {
     setTitle(e.target.value)
@@ -108,29 +111,29 @@ function Posts(props){
         }
         })
       )
-      updateListPosts()
+      // updateListPosts()
     }
       catch (err){
         console.log(err)
     }
 
   }
-  const updateListPosts = async () => {
-    const allListPost = await API.graphql(graphqlOperation(listPosts))
-    setPostItems(allListPost.data.listPosts.items)
-  }
+  // const updateListPosts = async () => {
+  //   const allListPost = await API.graphql(graphqlOperation(listPosts))
+  //   setPostItems(allListPost.data.listPosts.items)
+  // }
 
-    updateListPosts()
+  //   updateListPosts()
 
   return(
     <>
     {/* map and pass it to the eachpost component here or just console.log to see result*/}
     <PostForm addPost={addPost}></PostForm>
-    <ul>
+    {/* <ul>
         {PostItems.map((item) => {
-        return <li key={item.id}>{ item.name }</li>
+        return <li key={item.id}>{ item.title }</li>
         })}
-        </ul>
+        </ul> */}
     </>
   )
 }
